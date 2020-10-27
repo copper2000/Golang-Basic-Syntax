@@ -1,68 +1,63 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"math/bits"
+)
 
 func main() {
-	var number int
-	number = 10
-	fmt.Println(number)
+	// Bool
+	var myBool bool = true // false
+	fmt.Println(myBool)
 
-	var number1 int = 11
-	fmt.Println(number1)
+	var mySecondBool bool = false
+	fmt.Println(mySecondBool)
 
-	// Type Inference using var only
-	var email = "cooper@gmail.com"
-	fmt.Println(email)
+	// string
+	var myString string = "hello"
+	fmt.Println(myString)
 
-	// Declare multiple variables
-	// 1. Declare multiple variables with the same data type
+	// int
+	var myInt int = 456
+	fmt.Println(myInt)
 
-	var a, b int
-	a = 1
-	b = 2
-	fmt.Println(a, b)
+	// int 8, 16, 32, 64
+	// 1. Range
 
-	var a1, b1 = 10, 11
-	fmt.Println(a1, b1)
+	// Range int8
+	fmt.Println(math.MinInt8)
+	fmt.Println(math.MaxInt8)
+	// -128 -> 127
 
-	var a2, b2 = 12, 13
-	fmt.Println(a2, b2)
+	// Range int16
+	fmt.Println(math.MinInt16)
+	fmt.Println(math.MaxInt16)
+	// -32768 -> 32767
 
-	// 2. Declare many variables but different data types
+	// Range int32
+	fmt.Println(math.MinInt32)
+	fmt.Println(math.MaxInt32)
+	// -2147483648 -> 2147483647
 
-	var (
-		name string
-		age int
-		address string
-	)
+	// Range int64
+	fmt.Println(math.MinInt64)
+	fmt.Println(math.MaxInt64)
+	// -9223372036854775808 -> 9223372036854775807
 
-	name = "Batman"
-	address = "Gotham"
-	age = 40
+	// 2. Bits
+	fmt.Println("================")
 
-	fmt.Println(name)
-	fmt.Println(address)
-	fmt.Println(age)
+	fmt.Println(bits.OnesCount(math.MaxUint8))
+	// 8 bits
 
-	var (
-		name1 string = "Iron man"
-		age1 int = 45
-		address1 string = "California"
-	)
+	fmt.Println(bits.OnesCount(math.MaxUint16))
+	// 16 bits
 
-	fmt.Println(name1)
-	fmt.Println(address1)
-	fmt.Println(age1)
+	fmt.Println(bits.OnesCount(math.MaxUint32))
+	// 32 bits
 
-	// Type Inference using var only for multiple declare
+	fmt.Println(bits.OnesCount(math.MaxUint64))
+	// 64 bits
 
-	var name2, age2, address2 = "Spider man", 16, "Queen"
-
-	fmt.Println(name2)
-	fmt.Println(address2)
-	fmt.Println(age2)
-
-	// shorthand declaration
-	language := "Golang"
-	fmt.Println(language)
 }
